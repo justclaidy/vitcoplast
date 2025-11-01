@@ -6,6 +6,8 @@
   <title>Vitcoplast SRL</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="shortcut icon" href="vpa.jpg" type="image/x-icon" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -15,12 +17,17 @@
         <img src="vpa.jpg" alt="Vitcoplast logo" class="main-logo" />
         <h1 class="site-title">Vitcoplast SRL</h1>
       </div>
-      <nav>
+      <nav class="nav-menu" id="nav-menu">
         <a href="#home">Acasă</a>
         <a href="#products">Produse</a>
         <a href="#about">Despre</a>
         <a href="#contact">Contacte</a>
       </nav>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </div>
   </header>
 
@@ -35,9 +42,25 @@
   </section>
 
   <main>
-    <section id="products" class="products-section container">
-      <h2>Listă de prețuri</h2>
-      <div id="product-list" class="product-grid"></div>
+    <section id="products" class="products-section">
+      <div class="container">
+        <h2>Listă de prețuri</h2>
+        <div id="product-list" class="product-grid">
+          <!-- Пример продукта (можно заменить на JS-генерацию) -->
+          <div class="product-card">
+            <h3>Cutie pentru priză</h3>
+            <p>15 MDL / buc.</p>
+          </div>
+          <div class="product-card">
+            <h3>Cutie de distribuție</h3>
+            <p>25 MDL / buc.</p>
+          </div>
+          <div class="product-card">
+            <h3>Accesorii electrice</h3>
+            <p>de la 10 MDL</p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section id="about" class="about-section">
@@ -54,14 +77,14 @@
   <footer id="contact">
     <div class="container">
       <h2>Contacte</h2>
-      <p><a href="https://www.instagram.com/vitalii.cambur" target="_blank">Instagram</a></p>
-      <p>Tel: +37378280868</p>
+      <p><a href="https://www.instagram.com/vitalii.cambur" target="_blank" rel="noopener">Instagram</a></p>
+      <p>Tel: <a href="tel:+37378280868">+373 78 280 868</a></p>
 
       <div class="map-container">
         <iframe 
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2719.993235298479!2d28.861845600000002!3d47.0207378!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40c97dcf4b84b147%3A0x7e2db67bb9b0ef07!2sVitcoplast%20Electrica!5e0!3m2!1sru!2s!4v1762032548796!5m2!1sru!2s" 
           width="100%" 
-          height="400" 
+          height="300" 
           style="border:0; border-radius: 14px;" 
           allowfullscreen="" 
           loading="lazy" 
