@@ -1,0 +1,14 @@
+{
+  "Cutie pentru prize": [
+    { "name": "Cutie pentru prize D65xH45 cu surub", "price": "1.00" },
+    { "name": "Cutie pentru prize adâncă D65xH70 cu surub", "price": "1.50" },
+    { "name": "Cutie pentru prize D65xH40 cu surub", "price": "0.90" },
+    { "name": "Cutie pentru prize D65xH40 cu gaură", "price": "0.80" },
+    { "name": "Cutie pentru prize D65xH45 Gips-carton", "price": "2.50" }
+  ],
+  "Cutie de distributie": [
+    { "name": "Cutie de distributie D80xH40 rotundă", "price": "2.00" },
+    { "name": "Cutie de distributie D100xH40 rotundă", "price": "2.50" },
+    { "name": "Cutie de distributie D100x100xH45 pătrată", "price": "3.50" }
+  ]
+}
