@@ -184,6 +184,7 @@ body {
 /* 🔥 IMAGINI PERFECT ALINIATE */
 /* ================= IMAGINI PRODUSE ================= */
 
+/* ===== IMAGINI PRODUSE – TOATE IDENTICE ===== */
 .product-image-wrapper {
   height: 240px;
   background: #f8fbff;
@@ -191,15 +192,15 @@ body {
   align-items: center;
   justify-content: center;
   padding: 16px;
-  overflow: hidden;
 }
 
 .product-image-wrapper img {
-  max-width: 100%;
-  max-height: 100%;
+  width: 180px;       /* CHEIA */
+  height: 180px;      /* CHEIA */
   object-fit: contain;
   display: block;
 }
+
 
 /* Placeholder pentru "Imagine în curând" */
 .no-image {
