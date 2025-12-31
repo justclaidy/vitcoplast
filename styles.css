@@ -1,10 +1,159 @@
-/* === SECȚIUNEA PRODUSE – DESIGN MODERN ȘI UNIFORM === */
-.products-section {
-  padding: 6rem 0;
-  background: linear-gradient(to bottom, #f9fcff, #ffffff);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.products-section > .container > h2 {
+:root {
+  --primary: #0077b6;
+  --primary-dark: #005f8d;
+  --secondary: #03045e;
+  --text: #333;
+  --light: #f8fbff;
+  --white: #fff;
+  --gray: #f1f5f9;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  --transition: all 0.4s ease;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: var(--text);
+  background: #fdfdfd;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Navbar */
+.navbar {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+}
+
+.nav-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 0;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.main-logo {
+  width: 70px;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0,119,182,0.2);
+}
+
+.site-title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--secondary);
+}
+
+.nav-menu {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 600;
+  position: relative;
+  transition: var(--transition);
+}
+
+.nav-menu a::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: var(--primary);
+  transition: var(--transition);
+}
+
+.nav-menu a:hover::after {
+  width: 100%;
+}
+
+/* Hero - ca în poza ta bună */
+.hero {
+  height: 90vh;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('vpa.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.hero-content {
+  max-width: 800px;
+  padding: 0 2rem;
+}
+
+.welcome-text {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #caf0f8;
+  letter-spacing: 2px;
+}
+
+.hero-content h2 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin: 0.5rem 0;
+}
+
+.subtitle {
+  font-size: 1.3rem;
+  margin: 1.5rem 0 2.5rem;
+  color: #eee;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  box-shadow: 0 8px 25px rgba(0,119,182,0.3);
+  transition: var(--transition);
+  display: inline-block;
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0,119,182,0.4);
+}
+
+/* Produse - SIMETRIE PERFECTĂ */
+.products-section {
+  padding: 6rem 0;
+  background: var(--light);
+}
+
+.section-title {
   text-align: center;
   font-size: 2.8rem;
   color: var(--secondary);
@@ -12,13 +161,13 @@
   position: relative;
 }
 
-.products-section > .container > h2::after {
-  content: "";
-  width: 120px;
+.section-title::after {
+  content: '';
+  width: 100px;
   height: 5px;
   background: var(--primary);
   display: block;
-  margin: 1.2rem auto;
+  margin: 1rem auto;
   border-radius: 3px;
 }
 
@@ -31,117 +180,185 @@
   font-size: 2.2rem;
   color: var(--secondary);
   margin-bottom: 3rem;
-  position: relative;
-}
-
-.category-title::after {
-  content: "";
-  width: 90px;
-  height: 4px;
-  background: var(--primary);
-  display: block;
-  margin: 1rem auto;
-  border-radius: 2px;
 }
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 3rem;
-  justify-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
 }
 
 .product-card {
   background: white;
   border-radius: 24px;
   overflow: hidden;
-  width: 100%;
-  max-width: 380px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  transition: all 0.4s ease;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
   display: flex;
   flex-direction: column;
-  border: 1px solid #e8f2ff;
+  height: 100%; /* IMPORTANT - toate cardurile aceeași înălțime */
 }
 
 .product-card:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 20px 45px rgba(0, 119, 182, 0.18);
+  transform: translateY(-15px);
+  box-shadow: 0 25px 50px rgba(0,119,182,0.15);
 }
 
-.product-image {
-  height: 280px;
-  background: #f5f9ff;
+.product-image-wrapper {
+  height: 300px;
+  background: #f0f8ff;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  padding: 30px;
 }
 
-.product-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;        /* IMPORTANT: acum pozele nu mai sunt tăiate sau prea apropiate */
-  padding: 20px;              /* spațiu în interior pentru un aspect aerisit */
-  transition: transform 0.5s ease;
+.product-image-wrapper img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
 }
 
-.product-card:hover .product-image img {
-  transform: scale(1.08);
+.no-image {
+  color: #aaa;
+  font-size: 1.1rem;
 }
 
 .product-info {
-  padding: 2rem 1.5rem;
+  padding: 2rem;
   text-align: center;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background: white;
 }
 
 .product-info .name {
   font-size: 1.15rem;
-  color: #333;
+  color: var(--text);
+  margin-bottom: 1rem;
   line-height: 1.5;
-  margin-bottom: 1.2rem;
-  font-weight: 500;
 }
 
 .product-info .price {
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-weight: 700;
   color: var(--primary-dark);
 }
 
-/* Responsive */
-@media (max-width: 900px) {
-  .product-grid {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2.5rem;
-  }
+/* About & Footer - rămân stilizate frumos */
+.about-section {
+  padding: 5rem 0;
+  text-align: center;
+  background: white;
+}
+
+.about-section h2 {
+  font-size: 2.5rem;
+  color: var(--secondary);
+  margin-bottom: 1.5rem;
+}
+
+.about-section p {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+footer {
+  background: var(--secondary);
+  color: white;
+  padding: 4rem 0 2rem;
+  text-align: center;
+}
+
+footer h2 {
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+
+footer a {
+  color: #90e0ef;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+footer a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.map-container {
+  margin: 2.5rem auto;
+  max-width: 800px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+}
+
+.copy {
+  margin-top: 2rem;
+  color: #ade8f4;
+  font-size: 1rem;
+}
+
+/* Mobil */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 30px;
+  height: 3px;
+  background: var(--secondary);
+  border-radius: 3px;
+  transition: var(--transition);
 }
 
 @media (max-width: 768px) {
+  .nav-menu {
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    width: 100%;
+    background: white;
+    flex-direction: column;
+    padding: 3rem 0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: 0.4s;
+  }
+
+  .nav-menu.active {
+    left: 0;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .hero-content h2 {
+    font-size: 2.8rem;
+  }
+
   .product-grid {
     grid-template-columns: 1fr;
   }
-  
-  .product-image {
-    height: 320px;
-  }
-  
-  .product-info {
-    padding: 1.8rem 1.2rem;
+
+  .product-image-wrapper {
+    height: 350px;
   }
 }
 
 @media (max-width: 480px) {
-  .category-title {
-    font-size: 1.9rem;
+  .hero-content h2 {
+    font-size: 2.4rem;
   }
-  
-  .product-info .price {
-    font-size: 1.6rem;
+
+  .section-title {
+    font-size: 2.3rem;
   }
 }
