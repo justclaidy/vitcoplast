@@ -1,63 +1,61 @@
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.getElementById("product-list");
-  if (container) {
-    fetch("products.json")
-      .then(res => {
-        if (!res.ok) throw new Error("Fișierul products.json nu a fost găsit.");
-        return res.json();
-      })
-      .then(data => {
-        Object.keys(data).forEach(category => {
-          const section = document.createElement("div");
-          section.classList.add("category-section");
 
-          const title = document.createElement("h3");
-          title.textContent = category;
-          title.classList.add("category-title");
-          section.appendChild(title);
+  fetch("products.json")
+    .then(res => {
+      if (!res.ok) throw new Error("products.json nu a fost găsit");
+      return res.json();
+    })
+    .then(data => {
+      Object.keys(data).forEach(category => {
+        const section = document.createElement("div");
+        section.classList.add("category-section");
 
-          const grid = document.createElement("div");
-          grid.classList.add("product-grid");
-          section.appendChild(grid);
+        const title = document.createElement("h3");
+        title.classList.add("category-title");
+        title.textContent = category;
+        section.appendChild(title);
 
-          data[category].forEach(product => {
-            let imgSrc = "no-image.jpg"; // poţi pune o imagine generică dacă vrei, sau lăsa gol
+        const grid = document.createElement("div");
+        grid.classList.add("product-grid");
+        section.appendChild(grid);
 
-            if (product.name.includes("D65xH45 cu surub") && !product.name.includes("adâncă")) {
-              imgSrc = "photo_3.jpg";               // Cutie D65xH45 cu surub
-            } else if (product.name.includes("adâncă D65xH70")) {
-              imgSrc = "photo_4.jpg";               // Cutie adâncă
-            } else if (product.name.includes("Gips-carton")) {
-              imgSrc = "photo_1.jpg";               // Gips-carton
-            } else if (product.name.includes("D100x100xH45")) {
-              imgSrc = "photo_2.jpg";               // Cutie pătrată
-            }
-            // Celelalte produse vor avea imagine goală sau generică (poți adăuga mai târziu)
+        data[category].forEach(product => {
+          let imgSrc = "";
 
-            const card = document.createElement("div");
-            card.classList.add("product-card");
-            card.innerHTML = `
-              <div class="product-image">
-                <img src="${imgSrc}" alt="${product.name}" loading="lazy">
-              </div>
-              <div class="product-info">
-                <h4 class="name">${product.name}</h4>
-                <p class="price">${product.price} lei</p>
-              </div>
-            `;
-            grid.appendChild(card);
-          });
+          if (product.name.includes("D65xH45 cu surub") && !product.name.includes("adâncă")) {
+            imgSrc = "photo_3.jpg";
+          } else if (product.name.includes("adâncă D65xH70")) {
+            imgSrc = "photo_4.jpg";
+          } else if (product.name.includes("Gips-carton")) {
+            imgSrc = "photo_1.jpg";
+          } else if (product.name.includes("D100x100xH45")) {
+            imgSrc = "photo_2.jpg";
+          }
 
-          container.appendChild(section);
+          const card = document.createElement("div");
+          card.classList.add("product-card");
+          card.innerHTML = `
+            <div class="product-image-wrapper">
+              ${imgSrc ? `<img src="${imgSrc}" alt="${product.name}" loading="lazy">` : '<div class="no-image">Imagine în curând</div>'}
+            </div>
+            <div class="product-info">
+              <h4 class="name">${product.name}</h4>
+              <p class="price">${product.price} lei</p>
+            </div>
+          `;
+          grid.appendChild(card);
         });
-      })
-      .catch(err => {
-        console.error("Eroare:", err);
-        container.innerHTML = "<p class='error-message'>Nu s-au putut încărca produsele.</p>";
-      });
-  }
 
-  // Meniu mobil (neschimbat)
+        container.appendChild(section);
+      });
+    })
+    .catch(err => {
+      console.error(err);
+      container.innerHTML = "<p class='error'>Eroare la încărcarea produselor.</p>";
+    });
+
+  // Meniu mobil
   const hamburger = document.getElementById("hamburger");
   const navMenu = document.getElementById("nav-menu");
   if (hamburger && navMenu) {
