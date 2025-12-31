@@ -181,23 +181,23 @@ body {
   box-shadow: 0 25px 50px rgba(0,119,182,0.15);
 }
 
-/* 🔥 IMAGINI PERFECT ALINIATE */
-/* ===== IMAGINI PRODUSE – COMPACT + CONTROL ===== */
+/* ===== IMAGINI PRODUSE – ECHILIBRU PERFECT ===== */
 .product-image-wrapper {
-  height: 220px;              /* mai compact */
+  height: 220px;
   background: #f8fbff;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 8px;               /* mai puțin spațiu */
+  padding: 10px;
 }
 
 .product-image-wrapper img {
-  max-width: 95%;             /* umple vizual */
-  max-height: 95%;
-  object-fit: contain;        /* NU taie */
+  width: 200px;        /* TOATE par la fel */
+  max-height: 100%;    /* H70 NU iese */
+  object-fit: contain;
   display: block;
 }
+
 
 /* Placeholder pentru "Imagine în curând" */
 .no-image {
