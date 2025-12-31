@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // === 1. Загрузка продуктов из JSON ===
   const container = document.getElementById("product-list");
   if (container) {
     fetch("products.json")
@@ -22,20 +21,18 @@ document.addEventListener("DOMContentLoaded", () => {
           section.appendChild(grid);
 
           data[category].forEach(product => {
-            // Mapare simplă pentru imagini (bazată pe numele produsului)
+            // Atribuim pozele tale exact cum ai cerut
             let imgSrc = "";
             if (product.name.includes("Gips-carton")) {
-              imgSrc = "https://m.media-amazon.com/images/I/51o2PIjUaCL._AC_UF1000,1000_QL80_.jpg"; // photo_1.jpg
+              imgSrc = "photo_1.jpg";                    // Cutie pentru prize D65xH45 Gips-carton
             } else if (product.name.includes("D100x100xH45")) {
-              imgSrc = "https://m.media-amazon.com/images/I/613AWyPbhqL._AC_UF1000,1000_QL80_.jpg"; // photo_2.jpg
-            } else if (product.name.includes("D65xH45 cu surub")) {
-              imgSrc = "https://m.media-amazon.com/images/I/51m+rDUrUDL._AC_UF894,1000_QL80_.jpg"; // photo_3.jpg
+              imgSrc = "photo_2.jpg";                    // Cutie de distributie pătrată
+            } else if (product.name.includes("D65xH45 cu surub") && !product.name.includes("adâncă")) {
+              imgSrc = "photo_3.jpg";                    // Cutie pentru prize D65xH45 cu surub
             } else if (product.name.includes("adâncă D65xH70")) {
-              imgSrc = "https://m.media-amazon.com/images/I/41nnePWpotL.jpg"; // photo_4.jpg
-            } else if (product.name.includes("rotundă")) {
-              imgSrc = "https://m.media-amazon.com/images/I/514Fnfl2z4L.jpg"; // round generic
+              imgSrc = "photo_4.jpg";                    // Cutie adâncă
             } else {
-              imgSrc = "https://m.media-amazon.com/images/I/616YfAirjfL._AC_UF894,1000_QL80_.jpg"; // fallback
+              imgSrc = "placeholder.jpg"; // opțional: pune o imagine generică dacă vrei
             }
 
             const card = document.createElement("div");
@@ -45,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <img src="${imgSrc}" alt="${product.name}" loading="lazy">
               </div>
               <div class="product-info">
-                <p class="name">${product.name}</p>
+                <h4 class="name">${product.name}</h4>
                 <p class="price">${product.price} lei</p>
               </div>
             `;
@@ -61,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   }
 
-  // === 2. Мобильное меню (бургер) === (neschimbat)
+  // Meniu mobil (rămâne la fel)
   const hamburger = document.getElementById("hamburger");
   const navMenu = document.getElementById("nav-menu");
   if (hamburger && navMenu) {
@@ -69,8 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
       navMenu.classList.toggle("active");
       hamburger.classList.toggle("active");
     });
-    const navLinks = navMenu.querySelectorAll("a");
-    navLinks.forEach(link => {
+    navMenu.querySelectorAll("a").forEach(link => {
       link.addEventListener("click", () => {
         navMenu.classList.remove("active");
         hamburger.classList.remove("active");
