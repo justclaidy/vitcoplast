@@ -13,7 +13,7 @@
   --white: #fff;
   --gray: #f1f5f9;
   --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  --transition: all 0.4s ease;
+  --transition: all 0.35s ease;
 }
 
 body {
@@ -29,7 +29,7 @@ body {
   padding: 0 1.5rem;
 }
 
-/* Navbar */
+/* ================= NAVBAR ================= */
 .navbar {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
@@ -54,7 +54,6 @@ body {
 
 .main-logo {
   width: 70px;
-  height: auto;
   border-radius: 16px;
   box-shadow: 0 4px 15px rgba(0,119,182,0.2);
 }
@@ -75,7 +74,6 @@ body {
   color: var(--text);
   font-weight: 600;
   position: relative;
-  transition: var(--transition);
 }
 
 .nav-menu a::after {
@@ -93,10 +91,10 @@ body {
   width: 100%;
 }
 
-/* Hero - ca în poza ta bună */
+/* ================= HERO ================= */
 .hero {
   height: 90vh;
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('vpa.jpg') center/cover no-repeat;
+  background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url('vpa.jpg') center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -111,7 +109,6 @@ body {
 
 .welcome-text {
   font-size: 1.2rem;
-  margin-bottom: 0.5rem;
   color: #caf0f8;
   letter-spacing: 2px;
 }
@@ -119,7 +116,6 @@ body {
 .hero-content h2 {
   font-size: 3.5rem;
   font-weight: 800;
-  margin: 0.5rem 0;
 }
 
 .subtitle {
@@ -135,19 +131,16 @@ body {
   border-radius: 50px;
   text-decoration: none;
   font-weight: 600;
-  font-size: 1.1rem;
   box-shadow: 0 8px 25px rgba(0,119,182,0.3);
   transition: var(--transition);
-  display: inline-block;
 }
 
 .btn-primary:hover {
   background: var(--primary-dark);
-  transform: translateY(-5px);
-  box-shadow: 0 12px 30px rgba(0,119,182,0.4);
+  transform: translateY(-4px);
 }
 
-/* Produse - SIMETRIE PERFECTĂ */
+/* ================= PRODUSE ================= */
 .products-section {
   padding: 6rem 0;
   background: var(--light);
@@ -158,21 +151,6 @@ body {
   font-size: 2.8rem;
   color: var(--secondary);
   margin-bottom: 4rem;
-  position: relative;
-}
-
-.section-title::after {
-  content: '';
-  width: 100px;
-  height: 5px;
-  background: var(--primary);
-  display: block;
-  margin: 1rem auto;
-  border-radius: 3px;
-}
-
-.category-section {
-  margin-bottom: 5rem;
 }
 
 .category-title {
@@ -184,7 +162,7 @@ body {
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2.5rem;
 }
 
@@ -196,27 +174,28 @@ body {
   transition: var(--transition);
   display: flex;
   flex-direction: column;
-  height: 100%; /* IMPORTANT - toate cardurile aceeași înălțime */
 }
 
 .product-card:hover {
-  transform: translateY(-15px);
+  transform: translateY(-12px);
   box-shadow: 0 25px 50px rgba(0,119,182,0.15);
 }
 
+/* 🔥 IMAGINI PERFECT ALINIATE */
 .product-image-wrapper {
-  height: 300px;
-  background: #f0f8ff;
+  height: 260px;
+  background: #f8fbff;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 30px;
+  padding: 10px;
 }
 
 .product-image-wrapper img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 14px;
 }
 
 .no-image {
@@ -224,8 +203,9 @@ body {
   font-size: 1.1rem;
 }
 
+/* ================= INFO PRODUS ================= */
 .product-info {
-  padding: 2rem;
+  padding: 1.8rem;
   text-align: center;
   flex-grow: 1;
   display: flex;
@@ -234,48 +214,40 @@ body {
 }
 
 .product-info .name {
-  font-size: 1.15rem;
-  color: var(--text);
+  font-size: 1.1rem;
   margin-bottom: 1rem;
-  line-height: 1.5;
 }
 
 .product-info .price {
-  font-size: 2rem;
+  font-size: 1.9rem;
   font-weight: 700;
   color: var(--primary-dark);
 }
 
-/* About & Footer - rămân stilizate frumos */
+/* ================= ABOUT ================= */
 .about-section {
   padding: 5rem 0;
   text-align: center;
-  background: white;
 }
 
 .about-section h2 {
   font-size: 2.5rem;
-  color: var(--secondary);
   margin-bottom: 1.5rem;
 }
 
 .about-section p {
   max-width: 700px;
-  margin: 0 auto;
+  margin: auto;
   font-size: 1.1rem;
   color: #555;
 }
 
+/* ================= FOOTER ================= */
 footer {
   background: var(--secondary);
   color: white;
   padding: 4rem 0 2rem;
   text-align: center;
-}
-
-footer h2 {
-  margin-bottom: 1.5rem;
-  font-size: 2rem;
 }
 
 footer a {
@@ -284,26 +256,19 @@ footer a {
   font-weight: 600;
 }
 
-footer a:hover {
-  color: white;
-  text-decoration: underline;
-}
-
 .map-container {
   margin: 2.5rem auto;
   max-width: 800px;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.3);
 }
 
 .copy {
   margin-top: 2rem;
   color: #ade8f4;
-  font-size: 1rem;
 }
 
-/* Mobil */
+/* ================= MOBILE ================= */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -315,8 +280,6 @@ footer a:hover {
   width: 30px;
   height: 3px;
   background: var(--secondary);
-  border-radius: 3px;
-  transition: var(--transition);
 }
 
 @media (max-width: 768px) {
@@ -328,7 +291,6 @@ footer a:hover {
     background: white;
     flex-direction: column;
     padding: 3rem 0;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     transition: 0.4s;
   }
 
@@ -341,24 +303,16 @@ footer a:hover {
   }
 
   .hero-content h2 {
-    font-size: 2.8rem;
-  }
-
-  .product-grid {
-    grid-template-columns: 1fr;
+    font-size: 2.6rem;
   }
 
   .product-image-wrapper {
-    height: 350px;
+    height: 300px;
   }
 }
 
 @media (max-width: 480px) {
   .hero-content h2 {
-    font-size: 2.4rem;
-  }
-
-  .section-title {
-    font-size: 2.3rem;
+    font-size: 2.2rem;
   }
 }
