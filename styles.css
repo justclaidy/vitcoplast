@@ -182,25 +182,22 @@ body {
 }
 
 /* 🔥 IMAGINI PERFECT ALINIATE */
-/* ================= IMAGINI PRODUSE ================= */
-
-/* ===== IMAGINI PRODUSE – TOATE IDENTICE ===== */
+/* ===== IMAGINI PRODUSE – COMPACT + CONTROL ===== */
 .product-image-wrapper {
-  height: 240px;
+  height: 220px;              /* mai compact */
   background: #f8fbff;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 16px;
+  padding: 8px;               /* mai puțin spațiu */
 }
 
 .product-image-wrapper img {
-  width: 180px;       /* CHEIA */
-  height: 180px;      /* CHEIA */
-  object-fit: contain;
+  max-width: 95%;             /* umple vizual */
+  max-height: 95%;
+  object-fit: contain;        /* NU taie */
   display: block;
 }
-
 
 /* Placeholder pentru "Imagine în curând" */
 .no-image {
