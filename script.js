@@ -21,19 +21,18 @@ document.addEventListener("DOMContentLoaded", () => {
           section.appendChild(grid);
 
           data[category].forEach(product => {
-            // Atribuim pozele tale exact cum ai cerut
-            let imgSrc = "";
-            if (product.name.includes("Gips-carton")) {
-              imgSrc = "photo_1.jpg";                    // Cutie pentru prize D65xH45 Gips-carton
-            } else if (product.name.includes("D100x100xH45")) {
-              imgSrc = "photo_2.jpg";                    // Cutie de distributie pătrată
-            } else if (product.name.includes("D65xH45 cu surub") && !product.name.includes("adâncă")) {
-              imgSrc = "photo_3.jpg";                    // Cutie pentru prize D65xH45 cu surub
+            let imgSrc = "no-image.jpg"; // poţi pune o imagine generică dacă vrei, sau lăsa gol
+
+            if (product.name.includes("D65xH45 cu surub") && !product.name.includes("adâncă")) {
+              imgSrc = "photo_3.jpg";               // Cutie D65xH45 cu surub
             } else if (product.name.includes("adâncă D65xH70")) {
-              imgSrc = "photo_4.jpg";                    // Cutie adâncă
-            } else {
-              imgSrc = "placeholder.jpg"; // opțional: pune o imagine generică dacă vrei
+              imgSrc = "photo_4.jpg";               // Cutie adâncă
+            } else if (product.name.includes("Gips-carton")) {
+              imgSrc = "photo_1.jpg";               // Gips-carton
+            } else if (product.name.includes("D100x100xH45")) {
+              imgSrc = "photo_2.jpg";               // Cutie pătrată
             }
+            // Celelalte produse vor avea imagine goală sau generică (poți adăuga mai târziu)
 
             const card = document.createElement("div");
             card.classList.add("product-card");
@@ -53,12 +52,12 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       })
       .catch(err => {
-        console.error("Eroare la încărcarea produselor:", err);
+        console.error("Eroare:", err);
         container.innerHTML = "<p class='error-message'>Nu s-au putut încărca produsele.</p>";
       });
   }
 
-  // Meniu mobil (rămâne la fel)
+  // Meniu mobil (neschimbat)
   const hamburger = document.getElementById("hamburger");
   const navMenu = document.getElementById("nav-menu");
   if (hamburger && navMenu) {
