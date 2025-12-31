@@ -6,27 +6,21 @@
 
 :root {
   --primary: #0077b6;
-  --primary-light: #489ac0;
   --primary-dark: #005f8d;
   --secondary: #03045e;
-  --text: #2b2d42;
-  --text-light: #4a4a68;
-  --bg-light: #f8fbff;
-  --white: #ffffff;
-  --gray-bg: #f1f5f9;
-  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.06);
-  --shadow-md: 0 8px 24px rgba(0, 119, 182, 0.12);
-  --shadow-lg: 0 16px 40px rgba(3, 4, 94, 0.15);
-  --transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
-  --radius: 20px;
+  --text: #333;
+  --light: #f8fbff;
+  --white: #fff;
+  --gray: #f1f5f9;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  --transition: all 0.35s ease;
 }
 
 body {
-  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Poppins', sans-serif;
   color: var(--text);
-  background-color: #fafaff;
-  line-height: 1.7;
-  overflow-x: hidden;
+  background: #fdfdfd;
+  line-height: 1.6;
 }
 
 .container {
@@ -37,44 +31,37 @@ body {
 
 /* ================= NAVBAR ================= */
 .navbar {
-  background: rgba(255, 255, 255, 0.97);
-  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 2px 15px rgba(0,0,0,0.05);
 }
 
 .nav-inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.1rem 0;
+  padding: 1.2rem 0;
 }
 
 .logo-area {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 15px;
 }
 
 .main-logo {
-  width: 64px;
-  height: auto;
+  width: 70px;
   border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0, 119, 182, 0.2);
-  transition: var(--transition);
-}
-
-.main-logo:hover {
-  transform: scale(1.04);
+  box-shadow: 0 4px 15px rgba(0,119,182,0.2);
 }
 
 .site-title {
-  font-size: 1.7rem;
+  font-size: 1.8rem;
   font-weight: 800;
   color: var(--secondary);
-  letter-spacing: -0.4px;
 }
 
 .nav-menu {
@@ -86,203 +73,142 @@ body {
   text-decoration: none;
   color: var(--text);
   font-weight: 600;
-  font-size: 1.05rem;
   position: relative;
-  padding: 0.4rem 0;
 }
 
 .nav-menu a::after {
   content: '';
   position: absolute;
-  bottom: 0;
+  bottom: -6px;
   left: 0;
   width: 0;
-  height: 2.5px;
-  background: var(--primary);
-  border-radius: 1px;
-  transition: var(--transition);
-}
-
-.nav-menu a:hover::after,
-.nav-menu a:focus::after {
-  width: 100%;
-}
-
-.hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-}
-
-.hamburger span {
-  width: 28px;
   height: 3px;
-  background: var(--secondary);
-  border-radius: 2px;
+  background: var(--primary);
   transition: var(--transition);
 }
 
-.hamburger.active span:nth-child(1) {
-  transform: rotate(45deg) translate(6px, 6px);
-}
-
-.hamburger.active span:nth-child(2) {
-  opacity: 0;
-}
-
-.hamburger.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(6px, -6px);
+.nav-menu a:hover::after {
+  width: 100%;
 }
 
 /* ================= HERO ================= */
 .hero {
   height: 90vh;
-  min-height: 600px;
-  background: linear-gradient(rgba(3, 4, 94, 0.7), rgba(3, 4, 94, 0.85)), url('vpa.jpg') center/cover no-repeat;
+  background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url('vpa.jpg') center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   color: white;
-  padding: 0 1rem;
 }
 
 .hero-content {
   max-width: 800px;
-  padding: 0 1.5rem;
+  padding: 0 2rem;
 }
 
 .welcome-text {
   font-size: 1.2rem;
-  color: #a9d6e5;
-  letter-spacing: 1.8px;
-  font-weight: 500;
-  margin-bottom: 0.7rem;
-  text-transform: uppercase;
+  color: #caf0f8;
+  letter-spacing: 2px;
 }
 
 .hero-content h2 {
-  font-size: 3.4rem;
+  font-size: 3.5rem;
   font-weight: 800;
-  margin-bottom: 1.2rem;
-  letter-spacing: -1px;
-  line-height: 1.1;
 }
 
 .subtitle {
-  font-size: 1.35rem;
-  margin: 1.3rem 0 2.4rem;
-  color: #dbeafe;
-  max-width: 650px;
-  margin-left: auto;
-  margin-right: auto;
-  font-weight: 500;
+  font-size: 1.3rem;
+  margin: 1.5rem 0 2.5rem;
+  color: #eee;
 }
 
 .btn-primary {
   background: var(--primary);
   color: white;
-  padding: 1rem 2.6rem;
+  padding: 1rem 2.5rem;
   border-radius: 50px;
   text-decoration: none;
-  font-weight: 700;
-  font-size: 1.1rem;
-  box-shadow: var(--shadow-md);
+  font-weight: 600;
+  box-shadow: 0 8px 25px rgba(0,119,182,0.3);
   transition: var(--transition);
-  display: inline-block;
 }
 
 .btn-primary:hover {
   background: var(--primary-dark);
-  transform: translateY(-4px) scale(1.02);
-  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
 }
 
 /* ================= PRODUSE ================= */
 .products-section {
-  padding: 5.5rem 0;
-  background: var(--bg-light);
+  padding: 6rem 0;
+  background: var(--light);
 }
 
 .section-title {
   text-align: center;
-  font-size: 2.7rem;
+  font-size: 2.8rem;
   color: var(--secondary);
   margin-bottom: 4rem;
-  font-weight: 800;
-  position: relative;
-}
-
-.section-title::after {
-  content: '';
-  display: block;
-  width: 70px;
-  height: 4px;
-  background: var(--primary);
-  margin: 0.9rem auto 0;
-  border-radius: 2px;
 }
 
 .category-title {
   text-align: center;
-  font-size: 2.15rem;
+  font-size: 2.2rem;
   color: var(--secondary);
-  margin: 3rem 0 2.2rem;
-  font-weight: 700;
+  margin-bottom: 3rem;
 }
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2.4rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
 }
 
 .product-card {
-  background: var(--white);
-  border-radius: var(--radius);
+  background: white;
+  border-radius: 24px;
   overflow: hidden;
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow);
   transition: var(--transition);
   display: flex;
   flex-direction: column;
-  height: 100%;
 }
 
 .product-card:hover {
-  transform: translateY(-10px);
-  box-shadow: var(--shadow-md);
+  transform: translateY(-12px);
+  box-shadow: 0 25px 50px rgba(0,119,182,0.15);
 }
 
+/* ===== IMAGINI PRODUSE – ECHILIBRU PERFECT ===== */
 .product-image-wrapper {
-  height: 210px;
-  background: #f0f9ff;
+  height: 220px;
+  background: #f8fbff;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 15px;
+  padding: 10px;
 }
 
 .product-image-wrapper img {
-  max-width: 190px;
-  max-height: 170px;
+  width: 200px;        /* TOATE par la fel */
+  max-height: 100%;    /* H70 NU iese */
   object-fit: contain;
-  transition: var(--transition);
+  display: block;
 }
 
-.product-card:hover .product-image-wrapper img {
-  transform: scale(1.04);
-}
 
+/* Placeholder pentru "Imagine în curând" */
 .no-image {
-  color: #a0aec0;
-  font-size: 1.05rem;
+  color: #aaa;
+  font-size: 1.1rem;
   text-align: center;
-  padding: 1.2rem;
 }
 
+/* ================= INFO PRODUS ================= */
 .product-info {
-  padding: 1.7rem 1.5rem;
+  padding: 1.8rem;
   text-align: center;
   flex-grow: 1;
   display: flex;
@@ -292,14 +218,12 @@ body {
 
 .product-info .name {
   font-size: 1.1rem;
-  margin-bottom: 1.1rem;
-  color: var(--text);
-  line-height: 1.45;
+  margin-bottom: 1rem;
 }
 
 .product-info .price {
-  font-size: 1.8rem;
-  font-weight: 800;
+  font-size: 1.9rem;
+  font-weight: 700;
   color: var(--primary-dark);
 }
 
@@ -307,78 +231,70 @@ body {
 .about-section {
   padding: 5rem 0;
   text-align: center;
-  background: white;
 }
 
 .about-section h2 {
-  font-size: 2.4rem;
-  margin-bottom: 1.6rem;
-  color: var(--secondary);
-  font-weight: 700;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .about-section p {
-  max-width: 720px;
-  margin: 0 auto;
+  max-width: 700px;
+  margin: auto;
   font-size: 1.1rem;
-  color: var(--text-light);
-  line-height: 1.75;
+  color: #555;
 }
 
 /* ================= FOOTER ================= */
 footer {
   background: var(--secondary);
   color: white;
-  padding: 4.5rem 0 2.2rem;
+  padding: 4rem 0 2rem;
   text-align: center;
-}
-
-footer h2 {
-  font-size: 2.1rem;
-  margin-bottom: 1.6rem;
-  font-weight: 700;
 }
 
 footer a {
   color: #90e0ef;
   text-decoration: none;
   font-weight: 600;
-  transition: var(--transition);
-}
-
-footer a:hover {
-  color: #caf0f8;
-  text-decoration: underline;
-  text-underline-offset: 4px;
 }
 
 .map-container {
-  margin: 2.8rem auto;
-  max-width: 90%;
+  margin: 2.5rem auto;
+  max-width: 800px;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
 }
 
 .copy {
-  margin-top: 2.2rem;
-  color: #a9cde0;
-  font-size: 0.95rem;
+  margin-top: 2rem;
+  color: #ade8f4;
 }
 
 /* ================= MOBILE ================= */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 30px;
+  height: 3px;
+  background: var(--secondary);
+}
+
 @media (max-width: 768px) {
   .nav-menu {
     position: fixed;
-    top: 76px;
+    top: 80px;
     left: -100%;
     width: 100%;
     background: white;
     flex-direction: column;
-    padding: 2.8rem 0;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    transition: 0.4s ease;
-    gap: 1.8rem;
+    padding: 3rem 0;
+    transition: 0.4s;
   }
 
   .nav-menu.active {
@@ -393,54 +309,13 @@ footer a:hover {
     font-size: 2.6rem;
   }
 
-  .subtitle {
-    font-size: 1.2rem;
-  }
-
   .product-image-wrapper {
-    height: 230px;
-  }
-
-  .section-title {
-    font-size: 2.2rem;
-  }
-
-  .category-title {
-    font-size: 1.8rem;
-  }
-
-  .btn-primary {
-    padding: 0.95rem 2.4rem;
+    height: 300px;
   }
 }
 
 @media (max-width: 480px) {
   .hero-content h2 {
     font-size: 2.2rem;
-  }
-
-  .welcome-text {
-    font-size: 1rem;
-    letter-spacing: 1.2px;
-  }
-
-  .subtitle {
-    font-size: 1.1rem;
-  }
-
-  .product-info .price {
-    font-size: 1.5rem;
-  }
-
-  .product-info .name {
-    font-size: 1rem;
-  }
-
-  .main-logo {
-    width: 54px;
-  }
-
-  .site-title {
-    font-size: 1.45rem;
   }
 }
